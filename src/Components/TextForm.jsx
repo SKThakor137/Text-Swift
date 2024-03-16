@@ -115,9 +115,13 @@ const TextForm = ({ heading, mode, showAlert }) => {
       >
         <h3>Your text summary</h3>
         <p>
-          words {word} and character {text.length}
+          words
+          <span className="text-danger"> {word} </span> and character
+          <span className="text-danger"> {text.length} </span>
         </p>
-        <p>{readTime} Minute read</p>
+        <p>
+          <span className="text-danger"> {readTime} </span> Minute read
+        </p>
         <h3>Preview</h3>
         <p>{text.length > 0 ? text : "Nothing to preview"}</p>
       </div>

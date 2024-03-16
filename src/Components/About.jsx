@@ -1,9 +1,12 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const About = ({ mode }) => {
   let myStyle = {
     color: mode === "dark" ? "white" : "#010831",
     backgroundColor: mode === "dark" ? "#010831" : "white",
+  };
+  let strongColor = {
+    color: mode === "dark" ? "lime" : "#010831",
   };
   return (
     <div className="container">
@@ -26,7 +29,7 @@ const About = ({ mode }) => {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <h6>About Text Swift App :</h6>
             </button>
           </h2>
           <div
@@ -35,14 +38,14 @@ const About = ({ mode }) => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              The Text Swift app is a versatile text editing tool designed to
+              enhance your text processing experience. With a user-friendly
+              interface built using Bootstrap and React JS, this app offers a
+              range of powerful features to help you manage and refine your text
+              content. Whether you are looking to convert text case, remove
+              extra spaces, or estimate reading time, the LinkedIn Text Swift
+              app provides the tools you need to improve the quality of your
+              text.
             </div>
           </div>
         </div>
@@ -57,7 +60,7 @@ const About = ({ mode }) => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <h6>Key Features :</h6>
             </button>
           </h2>
           <div
@@ -66,14 +69,34 @@ const About = ({ mode }) => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <div>
+                <strong style={strongColor}>Text Case Conversion : </strong>
+                <span>Convert text to uppercase or lowercase.</span>
+              </div>
+              <div>
+                <strong style={strongColor}>Text Manipulation : </strong>
+                <span>
+                  Remove extra spaces, words, or characters from your text.
+                </span>
+              </div>
+              <div>
+                <strong style={strongColor}>Copy and Clear : </strong>
+                <span>
+                  Copy your modified text to the clipboard or clear the text
+                  area.
+                </span>
+              </div>
+
+              <div>
+                <strong style={strongColor}>Character and Word Count : </strong>
+                <span>
+                  Get real-time character and word count for your text.
+                </span>
+              </div>
+              <div>
+                <strong style={strongColor}>Reading Time : </strong>
+                <span>Estimate the reading time of your text.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -88,7 +111,7 @@ const About = ({ mode }) => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <h6>Development Team :</h6>
             </button>
           </h2>
           <div
@@ -97,20 +120,24 @@ const About = ({ mode }) => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <div>
+                <strong style={strongColor}>Lead Developer : </strong>
+                <span>Shailesh Thakor</span>
+              </div>
+              <div>
+                <strong style={strongColor}>Development Stack : </strong>
+                <span> React JS, Bootstrap</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+About.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 
 export default About;
