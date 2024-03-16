@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
+
 const Navbar = ({ title, toggleMode, mode }) => {
   return (
     <nav className={`navbar navbar-expand-lg bg-${mode} navbar-${mode}`}>
@@ -61,6 +63,12 @@ const Navbar = ({ title, toggleMode, mode }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
+  toggleMode: PropTypes.func.isRequired,
 };
 
 export default Navbar;

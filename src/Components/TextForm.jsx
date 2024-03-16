@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 const TextForm = ({ heading, mode, showAlert }) => {
   const [text, setText] = useState("");
@@ -29,8 +30,7 @@ const TextForm = ({ heading, mode, showAlert }) => {
     setText(newText);
     showAlert("Convert to Lowercase", "success");
   };
-  const clearCase = (event) => {
-    // let newText = (event.target.value = "");
+  const clearCase = () => {
     let newText = "";
     setText(newText);
     setWord(0);
@@ -128,5 +128,9 @@ const TextForm = ({ heading, mode, showAlert }) => {
     </div>
   );
 };
-
+TextForm.propTypes = {
+  heading: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
+  showAlert: PropTypes.func.isRequired,
+};
 export default TextForm;

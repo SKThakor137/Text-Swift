@@ -137,7 +137,7 @@ const About = ({ mode }) => {
 };
 
 About.propTypes = {
-  text: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
 };
 
 export default About;
